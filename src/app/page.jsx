@@ -5,6 +5,7 @@ import Reviews from "./components/Reviews/Reviews";
 import Histories from "./components/Histories/Histories";
 import Bottom from "./components/Bottom/Bottom";
 import styles from "../app/styles/page.module.scss";
+import Gallery from "./components/Gallery/Gallery";
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 			<Choose />
 			<Create />
 			<Reviews />
+			<Gallery />
 			<Histories />
 			<Bottom />
 		</main>
