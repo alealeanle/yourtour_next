@@ -141,4 +141,8 @@
 			pointer-events: none;
 		}
 	}
+
+	&__bgImg {
+		object-fit: cover;
+	}
 }

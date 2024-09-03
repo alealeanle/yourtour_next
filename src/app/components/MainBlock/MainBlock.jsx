@@ -12,6 +12,7 @@ const MainBlock = () => {
 			</div>
 			<div className={styles.mainBlock__bgImageWrapper}>
 				<Image
+					className={styles.mainBlock__bgImg}
 					src={Img.src}
 					fill
 					quality={100}
