@@ -1,0 +1,84 @@
+@import 'vars';
+
+.footer {
+	background-color: $beige200;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 88px;
+
+		@media (max-width: 813px) {
+			min-height: 95px;
+			flex-direction: column;
+		}
+	}
+
+	&__label {
+		margin-right: 527px;
+		font-size: 20px;
+		line-height: 142%;
+		color: $gray300;
+
+		@media (max-width: $md2) {
+		margin-right: 277px;
+		}
+
+		@media (max-width: $md3) {
+		margin-right: 18%;
+		}
+
+		@media (max-width: 813px) {
+		margin: 0px 0px 5px 0px;
+		}
+
+		@media (max-width: $md5) {
+			font-size: 16px;
+		}
+	}
+}
+
+.socials {
+	display: flex;
+
+	& a {
+		position: relative;
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+		line-height: 142%;
+		color: $black;
+		
+		@media (max-width: $md5) {
+			font-size: 16px;
+		}
+
+		& span:after {
+			content: "";
+			position: absolute;
+			right: 0;
+			width: 70%;
+			height: 100%;
+			border-bottom: 2px solid transparent;
+			transition: all 0.3s ease 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+
+				& span:after {
+					border-bottom: 1px solid $black;
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 25px;
+
+			@media (max-width: $md5) {
+				margin-right: 15px;
+			}
+		}
+	}
+}

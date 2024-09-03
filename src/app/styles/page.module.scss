@@ -1,0 +1,13 @@
+@import 'vars';
+
+.page {
+	flex: 1 1 auto;
+
+	&>* {
+		margin-bottom: 135px;
+
+		@media (max-width: $md4) {
+			margin-bottom: 75px;
+		}
+	}
+}

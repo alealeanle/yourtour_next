@@ -1,0 +1,63 @@
+@import "vars";
+
+.headerBlock {
+	margin: 0px 0px 100px;
+
+	@media (max-width: $md4) {
+		margin: 0px 0px 50px;
+	}
+
+	@media (max-width: $md5) {
+		margin: 0px 0px 40px;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-size: 59px;
+		font-weight: 700;
+		line-height: 124%;
+		text-align: center;
+		color: $black;
+
+		@media (max-width: $md4) {
+			font-size: 48px;
+		}
+
+		@media (max-width: $md5) {
+			font-size: 34px;
+			line-height: 112%;
+			letter-spacing: 0.7px;
+			margin-bottom: 20px;
+		}
+
+		@media (max-width: 349px) {
+			font-size: 30px;
+		}
+	}
+
+	&__text {
+		margin: 0 380px;
+		text-align: center;
+		font-size: 20px;
+		line-height: 142%;
+		color: $gray300;
+
+		@media (max-width: $md2) {
+			margin: 0 254px;
+		}
+
+		@media (max-width: $md3) {
+			margin: 0 110px;
+		}
+
+		@media (max-width: $md4) {
+			margin: 0;
+			font-size: 16px;
+		}
+		
+		@media (max-width: $md5) {
+			margin: 0;
+			font-size: 16px;
+		}
+	}
+}
