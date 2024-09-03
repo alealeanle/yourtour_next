@@ -9,11 +9,9 @@ const Bottom = () => {
 				<div className={styles.bottom__img}>
 					<Image
 						src={Img.src}
-						width={100}
-						height={100}
-						// quality={100}
+						fill
+						quality={100}
 						alt={"cover"}
-						unoptimized
 					/>
 				</div>
 				<div className={styles.bottom__main}>

@@ -38,11 +38,9 @@ const Card = ({ title = "Путешествие в горы", text, cardList, pr
 			<Image
 				className={styles.card__image}
 				src={img.src}
-				width={100}
-				height={100}
-				// quality={100}
+				fill
+				quality={100}
 				alt={alt}
-				unoptimized
 			/>
 		</article>
 	)
