@@ -1,0 +1,157 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.header {
+  margin-bottom: 103px;
+
+  @include respondToTablet {
+    margin-bottom: 50px;
+  }
+}
+
+.menuBlock {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin: 30px 235px 0px;
+  gap: 30px;
+
+  @include respondToDesktop {
+    margin: 30px 109px 0px;
+  }
+
+  @include respondToLargeTablet {
+    gap: 20px;
+  }
+
+  @include respondToTablet {
+    margin: 29px 30px 0px;
+    gap: 10px;
+  }
+}
+
+.menuBlockItem {
+  position: relative;
+  padding: 4px 0px;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 122%;
+  color: $black;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  @include respondToTablet {
+    font-size: 20px;
+  }
+
+  @include respondToMobile {
+    padding: 0px 0px;
+    font-size: 16px;
+    line-height: 142%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: all 0.3s ease 0s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &:after {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+._active {
+  color: $orange200;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $orange200;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &:after {
+        background-color: $orange200;
+      }
+    }
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @media (max-width: 1024px) {
+    gap: 18px;
+  }
+}
+
+.itemCard {
+  position: relative;
+  flex: 0 1 31.6%;
+  overflow: hidden;
+  border-radius: 50px;
+
+  @include respondToDesktop {
+    flex: 0 1 31.1%;
+  }
+
+  @media (max-width: 1024px) {
+    flex: 0 1 48.9%;
+  }
+
+  @include respondToLargeTablet {
+    flex: 0 1 48%;
+  }
+
+  @include respondToTablet {
+    min-width: 100%;
+    border-radius: 20px;
+  }
+
+  @include respondToMobile {
+    flex: 0 1 100%;
+  }
+}
+
+.cardBody {
+  min-height: 531px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 48.4%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  @include respondToDesktop {
+    padding: 50px 35px 50px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 50px;
+  }
+
+  @include respondToMobile {
+    min-height: 318px;
+    padding: 25px;
+  }
+}

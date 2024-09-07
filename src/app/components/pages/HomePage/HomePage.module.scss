@@ -1,0 +1,14 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.root {
+  flex: 1 1 auto;
+
+  & > * {
+    margin-bottom: 135px;
+
+    @include respondToTablet {
+      margin-bottom: 75px;
+    }
+  }
+}

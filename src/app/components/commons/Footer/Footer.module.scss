@@ -1,0 +1,84 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.footer {
+  background-color: $beige200;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+
+  @media (max-width: 813px) {
+    min-height: 95px;
+    flex-direction: column;
+  }
+}
+
+.label {
+  margin-right: 527px;
+  font-size: 20px;
+  line-height: 142%;
+  color: $gray300;
+
+  @include respondToDesktop {
+    margin-right: 277px;
+  }
+
+  @include respondToLargeTablet {
+    margin-right: 18%;
+  }
+
+  @media (max-width: 813px) {
+    margin: 0px 0px 5px 0px;
+  }
+
+  @include respondToMobile {
+    font-size: 16px;
+  }
+}
+
+.socials {
+  display: flex;
+
+  & a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    line-height: 142%;
+    color: $black;
+
+    @include respondToMobile {
+      font-size: 16px;
+    }
+
+    & span:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 70%;
+      height: 100%;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        & span:after {
+          border-bottom: 1px solid $black;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 25px;
+
+      @include respondToMobile {
+        margin-right: 15px;
+      }
+    }
+  }
+}

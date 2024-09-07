@@ -1,0 +1,212 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  @include respondToTablet {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover ~ img {
+      scale: 1.2;
+    }
+
+    &:hover .details:before {
+      background-color: $green400;
+    }
+  }
+
+  &:active .details:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    z-index: -1;
+    width: 199px;
+    height: 42px;
+    background-color: $orange200;
+    border-radius: 50px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover ~ img {
+      scale: 1.2;
+    }
+  }
+}
+
+.main {
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 122%;
+  color: $white;
+
+  @media (min-width: $desktop) {
+    margin-right: 50px;
+  }
+
+  @include respondToMobile {
+    margin-bottom: 13px;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.9px;
+  }
+}
+
+.price {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 142%;
+  letter-spacing: -0.1px;
+  color: $white;
+
+  @include respondToMobile {
+    margin-top: 13px;
+    font-size: 16px;
+  }
+}
+
+.text {
+  max-width: 554px;
+  margin-top: 36px;
+  font-size: 20px;
+  line-height: 142%;
+  color: $white;
+
+  @include respondToTablet {
+    font-size: 16px;
+  }
+
+  @include respondToMobile {
+    margin-top: 20px;
+  }
+}
+
+.list {
+  margin-top: 25px;
+  margin-left: 30px;
+
+  @include respondToDesktop {
+    margin-top: 26px;
+  }
+
+  @include respondToTablet {
+    margin-left: 26px;
+  }
+}
+
+.listItem {
+  list-style: disc;
+}
+
+.details {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 199px;
+  font-size: 23px;
+  line-height: 122%;
+  font-weight: 700;
+  color: $white;
+  border-radius: 50px;
+
+  @include respondToMobile {
+    font-size: 16px;
+    line-height: 142%;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    z-index: -1;
+    width: 199px;
+    height: 42px;
+    background-color: transparent;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+.social {
+  position: absolute;
+  top: 478px;
+  right: 60px;
+  z-index: 2;
+  gap: 37px;
+  display: flex;
+
+  @include respondToTablet {
+    gap: 23px;
+  }
+
+  @media (max-width: 627px) {
+    display: none;
+  }
+}
+
+.site {
+  position: relative;
+  font-size: 20px;
+  line-height: 142%;
+  color: $white;
+
+  @include respondToTablet {
+    font-size: 16px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease 0s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &:after {
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+
+  &:active {
+    color: $orange200;
+
+    &:after {
+      border-bottom: 1px solid $orange200;
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  transition: scale 0.3s ease 0s;
+
+  @include respondToTablet {
+    border-radius: 20px;
+  }
+}

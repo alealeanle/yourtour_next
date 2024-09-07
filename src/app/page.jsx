@@ -1,22 +1,36 @@
-import MainBlock from "./components/MainBlock/MainBlock";
-import Choose from "./components/Choose/Choose";
-import Create from "./components/Create/Create";
-import Reviews from "./components/Reviews/Reviews";
-import Histories from "./components/Histories/Histories";
-import Bottom from "./components/Bottom/Bottom";
-import styles from "../app/styles/page.module.scss";
-import Gallery from "./components/Gallery/Gallery";
+import { tours, histories } from '@/app/stub/stub';
+import HomePage from '@/app/components/pages/HomePage/HomePage';
 
-export default function Home() {
-	return (
-		<main className={styles.page}>
-			<MainBlock />
-			<Choose />
-			<Create />
-			<Reviews />
-			<Gallery />
-			<Histories />
-			<Bottom />
-		</main>
-	);
+const fetchData = async data => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve([...data]);
+    }, 1000);
+  });
+};
+
+const getTours = () => fetchData(tours);
+const getHistories = () => fetchData(histories);
+
+export default async function Home() {
+  try {
+    const tours = await getTours();
+    const histories = await getHistories();
+    return <HomePage tours={tours} histories={histories} />;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '100px',
+          fontSize: '48px',
+          color: 'red',
+        }}
+      >
+        Error loading data
+      </div>
+    );
+  }
 }
